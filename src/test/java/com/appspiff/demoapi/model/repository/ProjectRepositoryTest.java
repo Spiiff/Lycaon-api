@@ -23,8 +23,7 @@ class ProjectRepositoryTest{
         Optional<Project> project = repository.findById(pippo.getId());
 
         assertEquals("Pippo", project.get().getName());
-        //assertEquals("temp descrition", project.get().getDescription());
-
+        assertEquals("temp description", project.get().getDescription());
     }
 
 }
