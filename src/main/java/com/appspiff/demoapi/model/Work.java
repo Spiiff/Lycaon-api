@@ -9,6 +9,7 @@ public class Work {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(name="username")
     private String user;
     private String date;
     private int hours;
@@ -16,9 +17,6 @@ public class Work {
 
     @ManyToOne
     private Project project;
-
-    public Work() {
-    }
 
     public Long getId() {
         return id;
@@ -66,5 +64,13 @@ public class Work {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 }

@@ -1,7 +1,5 @@
 package com.appspiff.demoapi.model;
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name = "projects")
