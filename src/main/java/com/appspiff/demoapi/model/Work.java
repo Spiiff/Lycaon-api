@@ -8,7 +8,7 @@ public class Work {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String name;  //not null tutti gli elementi tranne id
     @Column(name="username")
     private String user;
     private String date;

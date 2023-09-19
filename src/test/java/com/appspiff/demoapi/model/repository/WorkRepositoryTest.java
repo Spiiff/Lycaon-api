@@ -40,7 +40,7 @@ class WorkRepositoryTest {
     }
 
     @Test
-    public void test_editWork(){
+    public void test_editWork() {
 
     }
 }

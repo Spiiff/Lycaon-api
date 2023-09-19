@@ -21,7 +21,7 @@ class ProjectServiceTest {
 
 
     @Test
-    public void whenAppStart_createProject(){
+    public void whenAppStart_createProject() {
         List<Project> project = projectService.list();
 
         assertEquals(0, project.size());
