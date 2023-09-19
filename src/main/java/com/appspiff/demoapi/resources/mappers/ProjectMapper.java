@@ -18,6 +18,9 @@ public abstract class ProjectMapper {
     public abstract Project toEntity(ProjectDTO dto);
 
     public Project fromId(Long id) throws Exception {
+        if(id==null){
+            return null;
+        }
         return projectRepository.findById(id).orElseThrow(() -> new Exception("Err no project found"));
     }
 }
