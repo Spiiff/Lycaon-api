@@ -7,8 +7,10 @@ import com.appspiff.demoapi.services.ProjectService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/project")
+@RequestMapping("/projects")
 public class ProjectResource {
 
     private final ProjectService projectService;
@@ -18,6 +20,11 @@ public class ProjectResource {
     public ProjectResource(ProjectService projectService, ProjectMapper projectMapper) {
         this.projectService = projectService;
         this.projectMapper = projectMapper;
+    }
+
+    @GetMapping()
+    public List<ProjectDTO> findAll(){
+        return projectMapper.toDTOs(projectService.findAll());
     }
 
     @GetMapping(value = "/{id}")

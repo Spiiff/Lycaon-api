@@ -6,6 +6,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 
+import java.util.List;
+
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = {ProjectMapper.class})
 public interface WorkMapper {
 
@@ -14,4 +16,6 @@ public interface WorkMapper {
 
     @Mapping(source = "projectId", target = "project")
     Work toEntity(WorkDTO dto);
+
+    List<WorkDTO> toDTOs(List<Work> byProjectId);
 }

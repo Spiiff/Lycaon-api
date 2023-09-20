@@ -20,7 +20,7 @@ public class ProjectService {
         return projectRepository.save(project);
     }
 
-    public List<Project> list() {
+    public List<Project> findAll() {
         return projectRepository.findAll();
     }
 
@@ -44,4 +44,5 @@ public class ProjectService {
         }
         return projectRepository.save(project);
     }
+
 }

@@ -7,8 +7,10 @@ import com.appspiff.demoapi.services.WorkService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/work")
+@RequestMapping("/works")
 public class WorkResource {
 
     private final WorkService workService;
@@ -24,6 +26,11 @@ public class WorkResource {
         return workMapper.toDTO(workService.findOne(id));
     }
 
+    @GetMapping()
+    public List<WorkDTO> getWorkbyProjectId(@RequestParam (value="projectId") long projectId){
+        return workMapper.toDTOs(workService.findByProjectId(projectId));
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public WorkDTO create(@RequestBody WorkDTO dto){
@@ -32,8 +39,8 @@ public class WorkResource {
 
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public WorkDTO update(@PathVariable( "id" ) Long id, @RequestBody Work work) {
-        return workMapper.toDTO(workService.update(id,work));
+    public WorkDTO update(@PathVariable( "id" ) Long id, @RequestBody WorkDTO dto) {
+        return workMapper.toDTO(workService.update(id,dto));
     }
 
     @DeleteMapping(value = "/{id}")

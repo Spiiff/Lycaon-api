@@ -22,7 +22,7 @@ class ProjectServiceTest {
 
     @Test
     public void whenAppStart_createProject() {
-        List<Project> project = projectService.list();
+        List<Project> project = projectService.findAll();
 
         assertEquals(0, project.size());
     }

@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public abstract class ProjectMapper {
@@ -14,6 +16,7 @@ public abstract class ProjectMapper {
     ProjectRepository projectRepository;
 
     public abstract ProjectDTO toDTO(Project project);
+    public abstract List<ProjectDTO> toDTOs(List<Project> projectList);
 
     public abstract Project toEntity(ProjectDTO dto);
 
