@@ -1,6 +1,5 @@
 package com.appspiff.demoapi.resources;
 
-import com.appspiff.demoapi.model.Work;
 import com.appspiff.demoapi.resources.dto.WorkDTO;
 import com.appspiff.demoapi.resources.mappers.WorkMapper;
 import com.appspiff.demoapi.services.WorkService;
